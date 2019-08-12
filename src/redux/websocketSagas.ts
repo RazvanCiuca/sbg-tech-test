@@ -24,7 +24,6 @@ function* startWebsocket() {
 function handleUpdates(socket: any) {
   return eventChannel((emit: any) => {
     socket.onopen = () => {
-      console.log('opening...');
       return emit({type: 'WEBSOCKET_CONNECTED'});
     };
 
@@ -33,7 +32,6 @@ function handleUpdates(socket: any) {
     };
 
     return () => {
-      console.log('close channel');
       socket.close();
     }
   });
@@ -42,7 +40,6 @@ function handleUpdates(socket: any) {
 function* internalListener(socket: any) {
   while (true) {
     const data = yield take(ActionTypes.SOCKET_SEND);
-    // console.log('internal socket send', data.payload);
     socket.send(JSON.stringify(data.payload));
   }
 }
@@ -50,7 +47,6 @@ function* internalListener(socket: any) {
 function* externalListener(socketChannel: any) {
   while (true) {
     const action = yield take(socketChannel);
-    // console.log('external action', action);
     switch (action.type) {
       case 'WEBSOCKET_CONNECTED': {
         yield put({type: 'WEBSOCKET_CONNECTED'});

@@ -5,10 +5,10 @@ import _ from 'lodash';
 import {  Button } from '@material-ui/core';
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import { GetOutcomesAction, SocketSendAction, TogglePriceFormatAction } from '../../../redux/actions';
+import { GetOutcomesAction, SocketSendAction, TogglePriceFormatAction } from '../../redux/actions';
 import StandardOutcome from '../OutcomeTemplates/StandardOutcome';
 import CorrectScore from '../OutcomeTemplates/CorrectScore';
-import { priceFormatSelector } from '../../../redux/selectors';
+import { priceFormatSelector } from '../../redux/selectors';
 
 class EventDetails extends React.PureComponent<any, any> {
   public state = {

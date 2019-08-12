@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
-import { SocketSendAction, SocketStartAction, TogglePriceFormatAction } from '../../redux/actions';
-import { priceFormatSelector, websocketConnectedSelector } from '../../redux/selectors';
+import { SocketSendAction, SocketStartAction } from '../../redux/actions';
+import { websocketConnectedSelector } from '../../redux/selectors';
 import skybetLogo from '../../assets/skybet.png';
 
-import LiveEventsList from './LiveEventList';
+import LiveEventsList from '../../components/LiveEventList';
 import homeStyles from './Home.module.scss';
 
 interface IHomeProps {
@@ -53,7 +53,7 @@ class Home extends React.Component<IHomeProps, IHomeState> {
   public render() {
     return (
       <div className={homeStyles.homeContainer}>
-        <div className={homeStyles.header} onClick={this.togglePriceFormat}>
+        <div className={homeStyles.header}>
           <img src={skybetLogo} alt="skybet-logo"/>
         </div>
         <LiveEventsList

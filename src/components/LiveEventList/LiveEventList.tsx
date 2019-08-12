@@ -12,9 +12,9 @@ import {
   boostCounterSelector,
   displayableEventsSelector,
   groupedDisplayableEventsSelector, priceFormatSelector,
-} from '../../../redux/selectors';
+} from '../../redux/selectors';
 import { connect } from 'react-redux';
-import { TogglePriceFormatAction } from '../../../redux/actions';
+import { TogglePriceFormatAction } from '../../redux/actions';
 
 class LiveEventsList extends React.PureComponent<any> {
   public state = {

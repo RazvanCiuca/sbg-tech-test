@@ -10,11 +10,12 @@ import { Dispatch } from 'redux';
 import {
   eventSelector,
   priceFormatSelector,
-} from '../../../redux/selectors';
+} from '../../redux/selectors';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import EventDetails from '../EventDetails';
-import { ClearNonPrimarySubscriptionsAction, GetOutcomesAction } from '../../../redux/actions';
+import { ClearNonPrimarySubscriptionsAction, GetOutcomesAction } from '../../redux/actions';
+import { formatPrice } from '../../utils/formatPrice';
 
 class Event extends React.PureComponent<any, any> {
   public state = {
@@ -72,10 +73,7 @@ class Event extends React.PureComponent<any, any> {
                     {outcome.name}
                   </div>
                   <div className={styles.outcomePrice}>
-                    { fractionFormat === 'fraction'
-                      ? `${outcome.price.num}/${outcome.price.den}`
-                      : `${outcome.price.decimal}`
-                    }
+                    { formatPrice(outcome.price, fractionFormat) }
                   </div>
                 </div>
               ))}

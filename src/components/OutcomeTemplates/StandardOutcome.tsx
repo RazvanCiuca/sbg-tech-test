@@ -4,7 +4,7 @@ import eventStyles from '../LiveEventList/LiveEventList.module.scss';
 import { Collapse } from '@material-ui/core';
 import _ from 'lodash';
 import React, { useEffect, useState } from 'react';
-import { formatPrice } from '../../../utils/formatPrice';
+import { formatPrice } from '../../utils/formatPrice';
 
 
 function StandardOutcome({

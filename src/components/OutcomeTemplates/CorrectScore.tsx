@@ -5,7 +5,7 @@ import outcomeStyles from './Outcome.module.scss';
 import { Collapse } from '@material-ui/core';
 import _ from 'lodash';
 import React, { useState } from 'react';
-import { formatPrice } from '../../../utils/formatPrice';
+import { formatPrice } from '../../utils/formatPrice';
 
 
 function CorrectScore({
@@ -86,24 +86,6 @@ function CorrectScore({
                 }
               </div>
           </div>
-
-        {/*{ _(market.fetchedOutcomes)*/}
-        {/*.values()*/}
-        {/*.filter((outcome: any) => outcome.status.displayable)*/}
-        {/*.value()*/}
-        {/*.map((outcome, index) => (*/}
-        {/*<div className={eventStyles.marketOutcome} key={`__outcome-${index}`}>*/}
-        {/*<div className={eventStyles.outcomeName}>*/}
-        {/*{outcome.name}*/}
-        {/*</div>*/}
-        {/*<div className={eventStyles.outcomePrice}>*/}
-        {/*{ !outcome.status.suspended*/}
-        {/*? formatPrice(outcome.price, fractionFormat)*/}
-        {/*: '-'*/}
-        {/*}*/}
-        {/*</div>*/}
-        {/*</div>*/}
-        {/*))}*/}
       </Collapse>
       }
     </div>

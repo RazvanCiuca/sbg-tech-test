@@ -110,7 +110,6 @@ export default function(state: any = initialState, action: any) {
     }
     case 'PRICE_CHANGE': {
       const { eventId, marketId, outcomeId } = action.data;
-      // console.log('price change', action.data);
       const affectedOutcome: any = _.get(state, ['liveEvents', eventId, 'fetchedMarkets', marketId, 'fetchedOutcomes', outcomeId], null);
       if (affectedOutcome) {
         affectedOutcome.price = action.data.price;
